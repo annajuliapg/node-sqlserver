@@ -4,7 +4,7 @@ const sql = require("mssql");
 const connection = async function () {
 
   if (global.connection) {
-      console.log("entrei no IF");
+      //console.log("entrei no IF");
       return global.connection;
   }
 
@@ -14,7 +14,7 @@ const connection = async function () {
 
       global.connection = connection;
 
-      console.log("Conectou no SQL Server");
+      //console.log("Conectou no SQL Server");
   
       return connection;
   }
