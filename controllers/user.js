@@ -12,8 +12,8 @@ class UserController {
 
   async getUsersById(request, response, next) {
     try {
-      const { params: { id: orderId } } = request;
-      const result = await UserService.getUsersById(orderId);
+      const { params: { id: userId } } = request;
+      const result = await UserService.getUsersById(userId);
       return response.status(200).json(result);
     } catch (error) {
       return response.status(400).json(error.message);
@@ -34,10 +34,20 @@ class UserController {
 
   async patchUserById(request, response, next) {
     try {
-      const orderId = request.params.id;
+      const userId = request.params.id;
       const updatedValues = request.body;
-      await UserService.patchUserById(orderId, updatedValues);
-      return response.status(200).json(`Field(s) of id \'${orderId}\' updated`);
+      await UserService.patchUserById(userId, updatedValues);
+      return response.status(200).json(`Field(s) of id \'${userId}\' updated`);
+    } catch (error) {
+      return response.status(400).json(error.message);
+    };
+  };
+
+  async deleteUserById(request, response, next) {
+    try {
+      const userId = request.params.id;
+      await UserService.deleteUserById(userId);
+      return response.status(200).json(`Row of id \'${userId}\' deleted`);
     } catch (error) {
       return response.status(400).json(error.message);
     };

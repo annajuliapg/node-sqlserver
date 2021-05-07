@@ -23,7 +23,7 @@ app.post('/users', UserController.insertUser);
 
 app.patch('/users/:id', UserController.patchUserById);
 
-//app.delete('/users/:id', UserController.deleteUserById);
+app.delete('/users/:id', UserController.deleteUserById);
 
 //The 404 Route (ALWAYS the last route)
 app.get('*', function (req, res) {
