@@ -9,10 +9,11 @@
   "author": "annajuliapg",
   "license": "ISC",
   "dependencies": {
+    "consign": "^0.1.6",
     "express": "^4.17.1",
     "mssql": "^6.3.1"
   },
-  "devDependencies" : {
+  "devDependencies": {
     "nodemon": "^2.0.7"
   }
 }
