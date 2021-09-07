@@ -32,7 +32,7 @@ CREATE TABLE Users (
 ```bash
 echo $null >> .\infrastructure\env\env.js
 ```
-E adicione as configurações:
+E adicione as informações:
 
 ```js
 const env = {
