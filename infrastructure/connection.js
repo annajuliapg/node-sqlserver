@@ -10,13 +10,13 @@ const connection = async function () {
 
   try {
 
-      const connection = await sql.connect(env);
+      const conn = await sql.connect(env);
 
-      global.connection = connection;
+      global.connection = conn;
 
       //console.log("Conectou no SQL Server");
   
-      return connection;
+      return global.connection;
   }
   catch (err) {
     console.error(err);
