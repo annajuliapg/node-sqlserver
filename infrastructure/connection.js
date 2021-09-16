@@ -4,7 +4,7 @@ const sql = require("mssql");
 const connection = async function () {
 
   if (global.connection) {
-      //console.log("entrei no IF");
+      console.log("Retornando a conexão já estabelecida");
       return global.connection;
   }
 
@@ -14,13 +14,13 @@ const connection = async function () {
 
       global.connection = conn;
 
-      //console.log("Conectou no SQL Server");
+      console.log("Conectou no SQL Server");
   
       return global.connection;
   }
   catch (err) {
     console.error(err);
-      console.log("\nNão foi possível estabelecer a conexão com o Bando de Dados. Verifique se o serviço está ligado e tente novamente.\n");
+      console.log("\nNão foi possível estabelecer a conexão com o Banco de Dados. Verifique se o serviço está ligado e tente novamente.\n");
       process.exit(1);
   }
 }
