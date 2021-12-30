@@ -19,7 +19,7 @@ class UserDAO {
 
       const conn = await connection();
       const result = await conn.query(`SELECT * FROM Users WHERE id = ${userId}`);
-      return result.recordset;
+      return result.recordset[0];
 
     } catch (err) {
       throw err.message;
