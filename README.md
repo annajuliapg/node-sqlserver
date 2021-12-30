@@ -16,10 +16,6 @@ npm install
 
 ## Crie o banco
 ```sql
-CREATE DATABASE USERSDB
-
-USE USERSDB
-
 CREATE TABLE Users (
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[name] [varchar](50) NULL,
@@ -29,10 +25,17 @@ CREATE TABLE Users (
 ```
 ## Configure env
 
+cmd
 ```bash
-echo $null >> .\infrastructure\env\env.js
+mkdir .\infrastructure\env && cd . > .\infrastructure\env\env.js
 ```
-E adicione as informações:
+
+powershell
+```ps
+mkdir .\infrastructure\env; cd . > .\infrastructure\env\env.js
+```
+
+E adicione as informações no arquivo criado:
 
 ```js
 const env = {
@@ -53,7 +56,7 @@ module.exports = env;
 ## Inicie o servidor
 
 ```bash
-node index.js
+npm start
 ```
 
 ## Rotas
